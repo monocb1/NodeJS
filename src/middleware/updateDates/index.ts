@@ -5,7 +5,7 @@ export const updateDateMiddleware = (req: Request, res: Response, next: NextFunc
        if (req.method === 'POST' || req.method === 'PUT' || req.method === 'PATCH') {
       
         const currentDate = new Date();
-        console.log(currentDate);
+        
         //@ts-ignore
         req.body.fecha_actualizacion = currentDate;
         return next();

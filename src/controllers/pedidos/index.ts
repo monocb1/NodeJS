@@ -7,7 +7,7 @@ const prisma = new PrismaClient()
 const getAllPedidos = async (req: Request, res: Response) => {
     
     try {
-        const result = await prisma.pedidos.findMany({ include: {cliente: true}});
+        const result = await prisma.pedidos.findMany({include: {cliente: true, items:{include: {producto: true}}}});
         res.status(200).json(result);
 
     } catch (error){
@@ -20,7 +20,7 @@ const getAllPedidos = async (req: Request, res: Response) => {
 const getPedidosByid = async (req: Request, res: Response) => {
     const { id } = req.params;
     try {
-        const result = await prisma.pedidos.findUnique({where: {id:parseInt(id)},include: {cliente: true}})
+        const result = await prisma.pedidos.findUnique({where: {id:parseInt(id)},include: {cliente: true, items:{include: {producto: true}}}})
         res.status(200).json(result);
 
     } catch (error){
