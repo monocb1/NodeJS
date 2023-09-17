@@ -348,7 +348,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"clienteId\": 1\r\n}",
+							"raw": "{\r\n    \"clienteId\": 1,\r\n    \"items\": {\r\n        \"create\": [\r\n            {\r\n                \"productoId\": 1\r\n            },\r\n            {\r\n                \"productoId\": 2\r\n            }\r\n        ]\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
